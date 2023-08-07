@@ -40,9 +40,6 @@ button {
 }
 
 /* state styles */
-.show {
-    display: inline-block;
-}
 
 .hide {
     display: none !important;
@@ -61,7 +58,7 @@ button {
 .sidebar {
     max-width: 100%;
     height: 170px;
-    background-image: url("/assets/images/bg-sidebar-mobile.svg");
+    background-image: url("../assets/images/bg-sidebar-mobile.svg");
     background-repeat: none;
     background-size: cover;
 
