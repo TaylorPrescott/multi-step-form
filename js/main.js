@@ -1,8 +1,12 @@
+/*
+    I know this could have been much, much cleaner.
+*/
+
+//Global vars for a component :(
 const formNavBtns = document.querySelector(".form-nav-wrapper");
 const formSteps = ["str to place nodeList in indexes 1-5",...document.querySelectorAll(".form-step")];
 const sidebarNums = ["str to place sidebarNums in indexes 1-5",...document.querySelectorAll(".sidebar-num-wrapper")];
 const formWrapper = document.querySelector(".form-wrapper");
-
 
 const formData = {
     plans: ["Arcade", "Advanced", "Pro"],
@@ -52,6 +56,8 @@ const formStyles = {
     }
 };
 
+
+//Step 1 Form Validation using regex to check for phone and special characters.
 const fieldValidator = (field, name) => {
     const phoneRegex = /^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/;
     const specialCharRegex = /[`!$%^&*_+\=\[\]{};':"\\|,<>\/?~]/;
@@ -105,6 +111,7 @@ const fieldValidator = (field, name) => {
     return "valid";
 }; 
 
+//Save step 1 form info to formState obj
 const storeFormInfo = () => {
     const custInfoForm = document.getElementById("custInfoForm");
     const custName = custInfoForm.children[1];
@@ -158,6 +165,7 @@ const handleStepOne = () => {
     formWrapper.style.placeItems = "center";
 };
 
+//Add or Remove styles from step 2 button when click event triggered
 const stepTwoBtnHighlighter = (btns, index) => {
     btns.forEach(btn => {
         if (btn.classList.contains("twoBtnHighlight")) {
@@ -167,6 +175,7 @@ const stepTwoBtnHighlighter = (btns, index) => {
     btns[index].classList.add("twoBtnHighlight");
 };
 
+//If no plan price set, set it to formState obj and formState total. Otherwise, subtract plan price from total, update formState.planPrice with new plan price, and add to total 
 const setPlanPrice = (plan) => {
     let planPrice = formData.monthlyPlanPricing[plan];
     let addOnsPrice = 0;
@@ -192,6 +201,7 @@ const setPlanPrice = (plan) => {
     }
 };
 
+//Add click event listeners to step 2 buttons and monthly/yearly switch
 const handleStepTwo = () => {
     const stepTwo = document.querySelector(".two");
     const stepTwoBtns = [...document.querySelector(".two-btn-wrapper").children];
@@ -254,6 +264,7 @@ const handleStepTwo = () => {
 
 };
 
+//Add or remove styles
 const stepThreeBtnHighlighter = (btnId, btnState) =>{
     let btn = document.getElementById(btnId);
     if (!btnState) {
@@ -263,6 +274,7 @@ const stepThreeBtnHighlighter = (btnId, btnState) =>{
     }
 }; 
 
+//Update formState.addOns array
 const removeAddOn = addon => {
     let updatedAddons = [];
     for (let i = 0; i < formState.addOns.length; i++) {
@@ -273,6 +285,7 @@ const removeAddOn = addon => {
     formState.addOns = updatedAddons;
 };
 
+//Push addon to formState.addOns array
 const pushAddOn = addon => {
     for (let i = 0; i < formState.addOns.length; i++) {
         if (formState.addOns[i] === addon) {
@@ -300,6 +313,7 @@ const removeFromTotal = (addOn) => {
     }
 };
 
+//Add click event listener to step 3 buttons wrapper if it's the first time user is on step 3
 const handleStepThree = () => {
     const stepThree = document.querySelector(".three");
     const addonCheckBoxes = document.querySelectorAll(".check-box");
@@ -373,6 +387,7 @@ const handleStepThree = () => {
     }
 };
 
+//Change Receipt plan price to reflect monthly / yearly state
 const setReceiptPlanPrice = (plan, el) => {
     if (formState.yearlyPlan) {
         el.textContent = "$" + formData.monthlyPlanPricing[plan] * 10 + "/yr";
@@ -467,18 +482,12 @@ const handleStepFour = () => {
     formState.allStepsVisited = true;
 };
 
-const handleStepFive = () => {
-    const stepFive = document.querySelector(".five");
-
-};
-
-
 const highlightStep = (currStep, nextStep) => {
     sidebarNums[currStep].classList.remove("highlighted-num");
     sidebarNums[nextStep].classList.add("highlighted-num");
 };
 
-
+//Control which form step is displayed
 const displayStep = (currStep, nextStep) => {
     let direction;
     if (currStep < nextStep) {
@@ -525,6 +534,7 @@ const displayStep = (currStep, nextStep) => {
 
 };
 
+//handle which form nav buttons to show and which step numbers to highlight
 formNavBtns.addEventListener("click", e => {
 
     // Handle form nav buttons
@@ -571,5 +581,3 @@ formNavBtns.addEventListener("click", e => {
         document.querySelector(".confirm").classList.remove("hide");
     }
 });
-
-handleStepOne();
