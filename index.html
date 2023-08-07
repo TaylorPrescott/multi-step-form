@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="./css/styles.css" type="text/css">
+  <title>Frontend Mentor | Multi-step form</title>
+  <script src="./js/main.js" defer></script>
+</head>
+<body>
+
+  <main>
+
+    <!--
+      Grid sidebar
+      Flexbox form
+    -->
+    <section class="component-wrapper">
+
+
+      <div class="sidebar">
+        <div class="sidebar-num-wrapper highlighted-num">
+          <div class="sidebar-num"><p>1</p></div>
+        </div>
+        <div class="sidebar-info hide">
+          <h2 class="sidbar-text step-num">Step 1</h2>
+          <p hide>Your Info</p>
+        </div>
+        <div class="sidebar-num-wrapper">
+          <div class="sidebar-num">2</div>
+        </div>
+        <div class="sidebar-info hide">
+          <h2 class="sidbar-text step-num">Step 2</h2>
+          <p>Select Plan</p>
+        </div>
+        <div class="sidebar-num-wrapper">
+          <div class="sidebar-num">3</div>
+        </div>
+        <div class="sidebar-info hide">
+          <h2 class="sidbar-text step-num">Step 3</h2>
+          <p>Add-ons</p>
+        </div>
+        <div class="sidebar-num-wrapper">
+          <div class="sidebar-num">4</div>
+        </div>
+        <div class="sidebar-info hide">
+          <h2 class="sidbar-text step-num">Step 4</h2>
+          <p>Summary</p>
+        </div>
+      </div>
+
+
+      <div class="form-wrapper">
+
+        <div class="form-step one">
+          <h1>Personal Info</h1>
+          <p class="step-description">
+            Please provide your name, email address, and phone number.
+          </p>
+          <form action="#" id="custInfoForm">
+            <label for="name">Name</label>
+            <input type="text" name="name" placeholder="e.g. Stephen King" required>
+            <label for="email">Email Address</label>
+            <input type="email" name="email" placeholder="e.g. stephenking@lorem.com" required>
+            <label for="phone">Phone Number</label>
+            <input type="text" name="phone" placeholder="e.g. +1 (234) 123-5678" required>
+          </form>
+        </div>
+
+        <div class="form-step two hide">
+          <h1>Select your plan</h1>
+          <p class="step-description">
+            You have the option of monthly or yearly billing.
+          </p>
+          <div class="two-btn-wrapper">
+            <button id="arcadePlan">
+              <img src="./assets/images/icon-arcade.svg" alt="arcade icon">
+              <p class="plan-btn-title">Arcade</p>
+              <p class="plan-btn-price">$9/mo</p>
+            </button>
+            <button id="advancedPlan">
+              <img src="./assets/images/icon-advanced.svg" alt="arcade icon">
+              <p class="plan-btn-title">Advanced</p>
+              <p class="plan-btn-price">$12/mo</p>
+            </button>
+            <button id="proPlan">
+              <img src="./assets/images/icon-pro.svg" alt="arcade icon">
+              <p class="plan-btn-title">Pro</p>
+              <p class="plan-btn-price">$15/mo</p>
+            </button>
+            <div class="plan-price-frequency">
+              <p class="monthly-plan highlighted-plan">Monthly</p>
+              <label class="switch">
+                <input type="checkbox" id="planCheckbox">
+                <span class="slider"></span>
+              </label>
+              <p class="yearly-plan">Yearly</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-step three hide">
+          <h1>Pick add-ons</h1>
+          <p class="step-description">
+            Add-ons help enhance your gaming experience.
+          </p>
+          <div class="btn-wrapper">
+            <button id="onlineAddOn">
+              <div class="check-box">
+                <img src="./assets/images/icon-checkmark.svg" alt="checkmark" class="check hide">
+              </div>
+              <p class="add-on-title">Online Service</p>
+              <p class="add-on-descrip">Access to multiplayer games</p>
+              <p class="add-on-price">+1/mo</p>
+            </button>
+            <button id="storageAddOn">
+              <div class="check-box">
+                <img src="./assets/images/icon-checkmark.svg" alt="checkmark" class="check hide">
+              </div>
+              <p class="add-on-title">Larger Storage</p>
+              <p class="add-on-descrip">Extra 1TB of cloud save</p>
+              <p class="add-on-price">+2/mo</p>
+            </button>
+            <button id="profileAddOn">
+              <div class="check-box">
+                <img src="./assets/images/icon-checkmark.svg" alt="checkmark" class="check hide">
+              </div>
+              <p class="add-on-title">Customizable Profile</p>
+              <p class="add-on-descrip">Custom theme on your profile</p>
+              <p class="add-on-price">+2/mo</p>
+            </button>
+          </div>
+        </div>
+
+        <div class="form-step four hide">
+          <h1>Finishing Up</h1>
+          <p class="step-description">
+            Double-check everything looks OK before confirming.
+          </p>
+          <div class="receipt-wrapper">
+            <div class="receipt-plan">
+              <h3 id="plan-chosen">
+                Arcade
+                (<span id="frequency">Monthly</span>)
+              </h3>
+              <a href="#">Change</a>
+              <p class="plan-price">$9/mo</p>
+            </div>
+            <div class="add-on-receipt-wrapper">
+              <div class="receipt-add-on">
+                <p class="add-on">Online Service</p>
+                <p class="add-on-receipt-price">+$1/mo</p>
+              </div>
+              <div class="receipt-add-on">
+                <p class="add-on">Online Service</p>
+                <p class="add-on-receipt-price">+$1/mo</p>
+              </div>
+            </div>
+              <div class="total-wrapper">
+                <p class="receipt-total">Total (per month)</p>
+                <p class="total">+$12/mo</p>
+              </div>
+          </div>
+        </div>
+
+        <div class="form-step five hide">
+          <img src="./assets/images/icon-thank-you.svg" alt="thank you icon">
+          <h1>Thank you!</h1>
+          <p>
+            Thanks for confirming your subscription! We hope you have fun using our platform. If you ever need support, please feel free to email us at support@loremgaming.com.
+          </p>
+        </div>
+
+      </div>
+      
+      <div class="form-nav-wrapper">
+        <button class="form-nav-btn back hide">Go Back</button>
+        <button class="form-nav-btn next">Next Step</button>
+        <button class="form-nav-btn confirm hide">Confirm</button>
+      </div>
+
+    </section>
+  </main>
+  
+  <!-- <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Taylor Prescott</a>.
+  </div> -->
+</body>
+</html>

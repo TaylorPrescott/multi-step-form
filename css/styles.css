@@ -1,0 +1,526 @@
+/* 375 and 1440 breakpoints */
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap');
+
+:root {
+    /* Primary */
+    --marine-blue: hsl(213, 96%, 18%);
+    --purplish-blue: hsl(243, 100%, 62%);
+    --pastel-blue: hsl(228, 100%, 84%);
+    --light-blue: hsl(206, 94%, 87%);
+    --strawberry-red: hsl(354, 84%, 57%);
+    /* Neutral */
+    --cool-gray: hsl(231, 11%, 63%);
+    --light-gray: hsl(229, 24%, 87%);
+    --magnolia: hsl(217, 100%, 97%);
+    --alabaster: hsl(231, 100%, 99%);
+    --white: hsl(0, 0%, 100%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    width: 100vw;
+}
+
+h1, h2, h3, p, span, a {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+button {
+    /* Remove btn styles */
+    border: none;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+/* state styles */
+.show {
+    display: inline-block;
+}
+
+.hide {
+    display: none !important;
+}
+/**************/
+
+
+/******************* Mobile Styles **********************/
+
+.component-wrapper {
+    height: 100vh;
+    background-color: var(--magnolia);
+}
+
+/*** Sidebar ***/
+.sidebar {
+    max-width: 100%;
+    height: 170px;
+    background-image: url("/assets/images/bg-sidebar-mobile.svg");
+    background-repeat: none;
+    background-size: cover;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.sidebar-num-wrapper {
+    width: 30px;
+    height: 30px;
+    margin: 35px 10px;
+    border-radius: 50%;
+    border: 1px solid var(--white);
+    color: var(--white);
+
+    display: grid;
+    place-items: center;
+}
+
+/* .sidebar-num {
+    
+} */
+
+.highlighted-num {
+    background-color: var(--light-blue);
+    color: var(--marine-blue);
+}
+
+/***************/
+
+
+
+/*** Form Steps ***/
+.form-wrapper {
+    width: 320px;
+    height: 390px;
+    margin: 0 auto;
+    padding: 20px 10px;
+    position: relative;
+    bottom: 70px;
+    border-radius: 10px;
+    background-color: var(--white);
+    box-shadow: 0 2px 3px var(--light-gray);
+    
+    display: grid;
+    place-items: center;
+}
+
+.form-step {
+    width: 280px;
+    margin: 0 auto;     
+}
+
+.form-step h1 {
+    margin-top: -5px;
+    margin-bottom: 5px;
+    font-weight: 700;
+    color: var(--marine-blue);
+}
+
+.form-step p {
+    padding: 5px 0;
+    font-weight: 400;
+    color: var(--cool-gray)
+}
+
+.step-description {
+    line-height: 1.6;
+}
+
+/* Step 1 */
+.one form label {
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-weight: 700;
+    font-size: 0.9em;
+    color: var(--marine-blue);
+
+    display: inline-block;
+}
+
+.one form input {
+    width: 250px;
+    height: 35px;
+    border: 1px solid var(--cool-gray);
+    border-radius: 3px;
+    padding-left: 15px;
+    font-size: 0.9rem;
+}
+
+.error-text {
+    display: inline-block;
+    text-align: right;
+    font-size: 0.7rem;
+    position: absolute;
+    left: 150px;
+    color: red;
+}
+
+.error {
+    border: 1px solid red !important;
+}
+/*********/
+
+
+/* Step 2 */
+.two h1{
+   margin-top: 25px;
+   margin-bottom: 5px;
+}
+
+.two button {
+    width: 275px;
+    height: 75px;
+    margin: 15px 0;
+    padding: 0 15px;
+    background-color: var(--white);
+    border: 1px solid var(--light-gray);
+    border-radius: 5px;
+    text-align: left;
+
+    display: block;
+}
+
+.twoBtnHighlight {
+    border: 1px solid var(--purplish-blue) !important;
+    background-color: var(--alabaster) !important;
+}
+
+.two button p {
+    position: relative;
+}
+
+.two button img {
+    position: relative;
+    top: 15px;
+}
+
+.two .plan-btn-title {
+    bottom: 33px;
+    left: 55px;
+    font-size: 1.2em;
+    font-weight: 700;
+    color: var(--marine-blue);
+}
+
+.plan-btn-price {
+    left: 55px;
+    bottom: 35px;
+    color: var(--cool-gray);
+}
+
+.plan-price-frequency {
+    height: 40px;
+    width: 275px;
+    margin-top: 20px;
+    border-radius: 5px;
+    text-align: center;
+    background-color: var(--magnolia);    
+}
+
+.plan-price-frequency p {
+    margin-top: 5px;
+    color: var(--cool-gray);
+    display: inline-block;
+}
+
+.plan-price-frequency label {
+    margin: 0 10px;
+}
+
+/* Plan Frequency Slider Styles */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 35px;
+    height: 20px;
+    bottom: 2px;
+}
+
+.switch input {
+    /* Hide default HTML checkbox */
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    cursor: pointer;
+    background-color: var(--marine-blue);
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 20px;
+}
+
+.slider::before {
+    position: absolute;
+    content: "";
+    width: 12px;
+    height: 12px;
+    left: 5px;
+    bottom: 4px;
+    background-color: var(--white);
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+.switch input:checked + .slider::before {
+    -webkit-transform: translateX(13px);
+    -ms-transform: translateX(13px);
+    transform: translateX(13px);
+}
+
+/* Add class to monthly or yearly plan */
+.highlighted-plan {
+    color: var(--marine-blue) !important;
+}
+
+/*********/
+
+/* Step 3 */
+.three h1{
+    margin-top: 25px;
+    margin-bottom: 5px;
+ }
+
+ .three .btn-wrapper button:nth-of-type(2) {
+    top: 210px;
+ }
+
+ .three .btn-wrapper button:nth-of-type(3) {
+    top: 295px;
+ }
+
+
+.three button {
+    width: 275px;
+    height: 75px;
+    margin: 15px 0;
+    padding-left: 15px;
+    background-color: var(--white);
+    border: 1px solid var(--light-gray);
+    border-radius: 10px;
+    text-align: left;
+
+    display: block;
+    position: absolute;
+}
+
+.btnHighlight {
+    border: 1px solid var(--purplish-blue) !important;
+    background-color: var(--alabaster) !important;
+}
+
+.three .check-box, .three button p {
+    position: relative;
+}
+
+.three .check-box {
+    width: 20px;
+    height: 20px;
+    top: 27px;
+    border: 1px solid var(--light-gray);
+}
+
+.three .check {
+    display: block;
+    margin-left: 3px;
+    margin-top: 2px;
+    width: 15px;
+    height: 15px;
+    background-color: var(--purplish-blue);
+}
+
+.three .add-on-title {
+
+    left: 35px;
+    bottom: 7px;
+    color: var(--marine-blue);
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.three .add-on-descrip {
+    left: 35px;
+    bottom: 13px;
+    font-size: 0.9em;
+}
+
+.three .add-on-price {
+    left: 205px;
+    bottom: 49px;
+}
+
+/*********/
+
+/* Step 4 */
+.four h1{
+    margin-top: 25px;
+    margin-bottom: 5px;
+ }
+
+.four .receipt-wrapper {
+    margin-top: 20px;
+}
+
+
+.four .receipt-plan, .four .receipt-add-on {
+    background-color: var(--magnolia);
+}
+
+.four .receipt-plan {
+    height: 70px;
+    border-bottom: 1px solid var(--light-gray);
+}
+
+.four .receipt-plan #plan-chosen {
+    margin-top: 15px;
+    margin-left: 15px;
+    display: inline-block;
+    font-weight: 500;
+    font-size: 0.95em;
+}
+
+.four .receipt-plan a {
+    display: block;
+    color: var(--cool-gray);
+    font-size: 0.9em;
+    margin-left: 15px;
+}
+
+.four .receipt-plan .plan-price {
+    display: inline-block;
+    position: relative;
+    left: 220px;
+    bottom: 30px;
+    font-size: 0.9em;
+    font-weight: 700;
+    color: var(--marine-blue);
+}
+
+
+.four .receipt-add-on {
+    height: 35px;
+    position: relative;
+}
+
+.four .receipt-add-on .add-on {
+    margin-left: 15px;
+}
+
+.four .receipt-add-on p {
+    font-size: 0.9em;
+    display: inline-block;
+    margin-top: 5px;
+}
+
+.four .add-on-receipt-price {
+    color: var(--marine-blue);
+    position: absolute;
+    right: 15px;
+}
+
+.four .total-wrapper {
+    margin-top: 20px;
+}
+
+.four .total-wrapper .receipt-total {
+    margin-left: 15px;
+    display: inline-block;
+    font-size: 0.9em;
+}
+
+.four .total-wrapper .total {
+    display: inline-block;
+    margin-left: 65px;
+    font-weight: 700;
+    color: var(--purplish-blue);
+}
+/*********/
+
+/* Step 5 */
+.five {
+    text-align: center;
+}
+
+.five img {
+    width: 50px;
+    height: 50px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.five p {
+    margin-top: 5px;
+    line-height: 1.6;
+}
+
+/*********/
+/*****************/
+
+/*** Form Nav ***/
+.form-nav-wrapper {
+    height: 60px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    background-color: var(--white);
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.form-nav-btn {
+    height: 40px;
+    width: 100px;
+    margin: 10px 15px;
+    border-radius: 5px;
+    background-color: var(--purplish-blue);
+    color: var(--white);
+    font-weight: 700;
+}
+
+.form-nav-wrapper  .next{
+    grid-column: 3;
+}
+
+.next:active, .confirm:active {
+    background-color: var(--marine-blue);
+}
+
+.form-nav-wrapper .back {
+    background-color: var(--white);
+    color: var(--cool-gray);
+    grid-column: 1/2;
+}
+
+.form-nav-wrapper .confirm {
+    grid-column: 3;
+}
+
+/***************/
+
+
+/* .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); } */
+
+
+@media screen and (min-width: 400px) {
+    body {
+        background-color: black;
+    }
+}
