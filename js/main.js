@@ -176,8 +176,7 @@ const setPlanPrice = (plan) => {
         formState.total = formState.total - formState.planPrice;
         formState.planPrice = 0;
     }
-    console.log("selectedPlanPrice: " + planPrice);
-    console.log("total: " + formState.total);
+
     if (formState.yearlyPlan) {
         if (formState.total !== 0 && formState.total < 10) {
             formState.total = formState.total * 10;
@@ -191,9 +190,6 @@ const setPlanPrice = (plan) => {
         formState.planPrice = planPrice;
         formState.total += planPrice;
     }
-    console.log("***selectedPlanPrice: " + planPrice);
-    console.log("***total: " + formState.total);
-    console.log("***formStatePlanPrice: " + formState.planPrice);
 };
 
 const handleStepTwo = () => {
@@ -469,7 +465,6 @@ const handleStepFour = () => {
 
     setReceiptTotal();
     formState.allStepsVisited = true;
-    console.log(formState);
 };
 
 const handleStepFive = () => {
